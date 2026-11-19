@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Paleta suave e acolhedora do Ideacloud */
+@theme {
+  --color-cream: #fbf7f0;
+  --color-paper: #fffdf9;
+  --color-ink: #3d3a36;
+  --color-ink-soft: #7a746b;
+  --color-line: #ece4d6;
+
+  --color-sage-50: #eef3f0;
+  --color-sage-100: #dce8e1;
+  --color-sage-500: #7c9a8e;
+  --color-sage-600: #5e8070;
+  --color-sage-700: #4a6659;
+
+  --color-peach-100: #fde9e0;
+  --color-peach-300: #f4b8a0;
+  --color-peach-500: #e58e6d;
+
+  --color-lilac-100: #ece7f6;
+  --color-lilac-300: #b9a9d6;
+
+  --color-sun-100: #fbf0d0;
+  --color-sun-300: #f0cf7a;
+
+  --font-sans: var(--font-nunito), ui-rounded, system-ui, sans-serif;
+  --radius-card: 1.25rem;
+  --shadow-soft: 0 2px 14px rgb(94 128 112 / 0.1);
+}
+
+html {
+  background: var(--color-cream);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* app instalado no iPad: sem seleção acidental nem destaque azul no toque */
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* Alvos de toque confortáveis e sem zoom automático do iOS em campos */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sage-500);
+  outline-offset: 2px;
+}
