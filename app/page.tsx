@@ -41,7 +41,7 @@ export default function Home() {
       </div>
       <h1 className="text-3xl font-extrabold tracking-tight">Ideacloud</h1>
       <p className="text-ink-soft">
-        Um cantinho para suas ideias e projetos criativos.
+        Um cantinho para suas ideias e projetos.
       </p>
       <Suspense
         fallback={

@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Ideacloud",
     short_name: "Ideacloud",
-    description: "Um cantinho para suas ideias e projetos criativos.",
+    description: "Um cantinho para suas ideias e projetos.",
     lang: "pt-BR",
     start_url: "/",
     scope: "/",

@@ -10,7 +10,7 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Ideacloud",
-  description: "Um cantinho para suas ideias e projetos criativos.",
+  description: "Um cantinho para suas ideias e projetos.",
   applicationName: "Ideacloud",
   appleWebApp: {
     capable: true,

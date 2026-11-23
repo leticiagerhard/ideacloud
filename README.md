@@ -1,6 +1,7 @@
 # ☁️ Ideacloud
 
-App pessoal (PWA) para guardar ideias e transformar algumas delas em projetos.
+App pessoal (PWA) para guardar ideias e transformar algumas delas em projetos, de
+criativos a acadêmicos (como a IC), cada um na sua área.
 Next.js (App Router) + TypeScript + Tailwind + Supabase, com deploy na Vercel.
 
 ## Como o acesso funciona
@@ -25,11 +26,13 @@ ao público** e só o servidor do app consegue acessá-lo, com a chave secreta.
 2. Abra o arquivo [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql),
    copie **todo** o conteúdo e cole no editor.
 3. Clique em **Run**. O resultado esperado é `Success. No rows returned`.
-4. Confira em **Table Editor**: devem existir `ideas`, `idea_images`,
-   `projects` e `steps` (com o aviso de RLS ativada, é isso mesmo que queremos).
-5. Confira em **Storage**: deve existir o bucket privado `idea-images`.
+4. Repita com [`supabase/migrations/0002_areas_and_deadlines.sql`](supabase/migrations/0002_areas_and_deadlines.sql)
+   (nova query, cole, **Run**). Sempre na ordem: 0001 e depois 0002.
+5. Confira em **Table Editor**: devem existir `ideas`, `idea_images`,
+   `projects`, `steps` e `areas` (com o aviso de RLS ativada, é isso mesmo que queremos).
+6. Confira em **Storage**: deve existir o bucket privado `idea-images`.
 
-> Rode a migration só uma vez. Se rodar de novo dará erro de "já existe", sem
+> Rode cada migration só uma vez. Se rodar de novo dará erro de "já existe", sem
 > estragar nada.
 
 ### 3. Copiar as chaves
@@ -65,6 +68,12 @@ proxy.ts        portão de senha (no Next 16 substitui o middleware.ts)
 public/         ícones e service worker
 supabase/       migrations SQL
 ```
+
+## Áreas e prazos
+- **Áreas** organizam ideias e projetos (começam como 🎨 Criativo, 🎓 Faculdade e
+  🌱 Pessoal; você pode criar, renomear e apagar). Apagar uma área não apaga
+  nada, só deixa os itens sem área.
+- **Prazos** são opcionais, em projetos e em etapas.
 
 ## Regras do banco (garantidas pelo próprio Postgres)
 - No máximo **3 projetos ativos** (trigger com lock contra concorrência).
